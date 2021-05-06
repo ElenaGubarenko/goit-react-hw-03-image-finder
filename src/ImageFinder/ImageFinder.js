@@ -72,7 +72,9 @@ class ImageFinder extends Component {
           apiImages: [...prevState.apiImages, ...answer],
           page: prevState.page + 1,
         }));
-        this.scrollTo();
+        if (this.state.page > 2) {
+          this.scrollTo();
+        }
       })
       .catch(error =>
         this.setState({
